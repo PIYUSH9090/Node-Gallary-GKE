@@ -1,0 +1,94 @@
+Level is NOT DEBUG. There will be no wait.
+Trying to login. If you are NOT logged in, there will be a prompt
+Authenticating with existing credentials...
+Login Succeeded
+Building node-gallary-logic
+Sending build context to Docker daemon  326.1kB
+Step 1/9 : FROM node:10.19.0
+ ---> 01b816051d34
+Step 2/9 : WORKDIR /app
+ ---> Using cache
+ ---> 4f84f2bd2f0e
+Step 3/9 : COPY package.json /app/package.json
+ ---> Using cache
+ ---> e9d3a3747ad8
+Step 4/9 : RUN npm install --silent
+ ---> Using cache
+ ---> 8954be2cf435
+Step 5/9 : COPY . /app
+ ---> 8176b9edad9f
+Step 6/9 : RUN pwd
+ ---> Running in 5aa799cb32c1
+/app
+Removing intermediate container 5aa799cb32c1
+ ---> 28090e0d2876
+Step 7/9 : RUN ls -lrt
+ ---> Running in 269b6f0bc679
+total 64
+drwxr-xr-x 116 root root  4096 Aug 25 05:04 node_modules
+drwxrwxr-x   2 root root  4096 Aug 25 06:14 views
+-rw-rw-r--   1 root root   411 Aug 25 06:14 package.json
+-rw-rw-r--   1 root root 33413 Aug 25 06:14 package-lock.json
+drwxrwxr-x   2 root root  4096 Aug 26 03:00 uploads
+-rw-rw-r--   1 root root   549 Aug 26 09:10 Dockerfile
+-rw-rw-r--   1 root root  1366 Aug 26 09:11 server.js
+-rw-rw-r--   1 root root  1759 Aug 26 09:11 BuildNodeGallaryLogicDocker.sh
+Removing intermediate container 269b6f0bc679
+ ---> 12f3aaeb35ed
+Step 8/9 : EXPOSE 5050
+ ---> Running in a5cefc3b537a
+Removing intermediate container a5cefc3b537a
+ ---> 876ca478b86a
+Step 9/9 : CMD ["npm","start", "-g", "daemon off;"]
+ ---> Running in be5ae0fde427
+Removing intermediate container be5ae0fde427
+ ---> b6d0a32c9743
+Successfully built b6d0a32c9743
+Successfully tagged piyush9090/node-gallary-logic:latest
+Pushing node-gallary-logic
+Using default tag: latest
+The push refers to repository [docker.io/piyush9090/node-gallary-logic]
+2478efc62428: Preparing
+192911b95bd5: Preparing
+1169ce9c1b20: Preparing
+a819ac5fc9c8: Preparing
+2f942335d8fb: Preparing
+2144a19162ed: Preparing
+f1cac044aca7: Preparing
+45ac74adb5b4: Preparing
+d485cbbe6a5e: Preparing
+391c89959588: Preparing
+588545a7a2a3: Preparing
+8452468a5e50: Preparing
+55b19a5e648f: Preparing
+d485cbbe6a5e: Waiting
+8452468a5e50: Waiting
+2144a19162ed: Waiting
+55b19a5e648f: Waiting
+391c89959588: Waiting
+f1cac044aca7: Waiting
+588545a7a2a3: Waiting
+45ac74adb5b4: Waiting
+2f942335d8fb: Layer already exists
+192911b95bd5: Layer already exists
+a819ac5fc9c8: Layer already exists
+1169ce9c1b20: Layer already exists
+f1cac044aca7: Layer already exists
+2144a19162ed: Layer already exists
+45ac74adb5b4: Layer already exists
+d485cbbe6a5e: Layer already exists
+391c89959588: Layer already exists
+2478efc62428: Pushed
+588545a7a2a3: Layer already exists
+8452468a5e50: Layer already exists
+55b19a5e648f: Layer already exists
+latest: digest: sha256:8c3646776b3d7fc8c779e027a41c59818ae3d644ec828da804acf5f1091d8a9b size: 3050
+Running node-gallary-logic
+388a2e057084d2dc54bd4cf6504c9b87e5492fbd7a48a08baaad9bc890da9649
+List of containers running now
+CONTAINER ID   IMAGE                           COMMAND                  CREATED         STATUS         PORTS                                               NAMES
+388a2e057084   piyush9090/node-gallary-logic   "docker-entrypoint.s…"   5 seconds ago   Up 4 seconds   0.0.0.0:5050->5050/tcp, :::5050->5050/tcp           nostalgic_merkle
+4bec1b4175f1   f1f7a4b20e16                    "docker-entrypoint.s…"   2 hours ago     Created                                                            interesting_williamson
+d0358fc0aa1a   f1f7a4b20e16                    "docker-entrypoint.s…"   6 hours ago     Up 6 hours     80/tcp, 0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   eloquent_boyd
+ The one we just started is : 388a2e057084
+node-gallary container is running 388a2e057084 :) 

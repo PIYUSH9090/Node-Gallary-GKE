@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-gallary-pv-pod
+spec:
+  selector:
+    matchLabels:
+      app: node-gallary-pv-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node-gallary-pv-pod
+    spec:
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs
+      containers:
+        - name: node-gallary-pv-pod
+          image: piyush9090/node-gallary-logic
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: "/app/images"
+              name: nfs          
+          ports:
+          - containerPort: 5050
